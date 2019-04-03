@@ -20,3 +20,37 @@ p, label {
 	font-family: 'Montserrat', sans-serif;
     font-weight: 300;
 }
+  table {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+div#achtelfinale {
+    text-align: center;
+}
+div#viertelfinale {
+    text-align: center;
+}
+div#halbfinale{
+    text-align: center;
+}
+div#drittplatz{
+    text-align: center;
+}
+div#finale{
+    text-align: center;
+}
+form {
+    text-align: center;
+}
+table {
+    border-style: unset;
+}
+input#submit {
+    padding: 10px;
+    background: black;
+    font-size: 20px;
+    color: white;
+    border-radius: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
