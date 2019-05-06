@@ -1,1 +1,1 @@
-[{"name":"test"},{"name":"Lakers"},{"name":"Chicago Bulls"},{"name":"FC Basel"},{"name":"Nets"}]
+[{"id":1,"name":"lakers"},{"id":2,"name":"nets"},{"id":3,"name":"chicago bulls"},{"id":4,"name":"raptors"},{"id":5,"name":"celtics"}]

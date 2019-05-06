@@ -3,17 +3,19 @@
  {  
       if(empty($_POST["name"]))  
       {  
-           $error = "<label class='text-danger'>Enter Shayari details</label>";  
+           $error = "<label class='text-danger'>Fehlgeschlagen</label>";  
       }  
       else  
       {  
            if(file_exists('teams.json'))  
            {  
                 $current_data = file_get_contents('teams.json');  
-                $array_data = json_decode($current_data, true);  
+                $array_data = json_decode($current_data, true);
+                $id = count($array_data) + 1;
                 $extra = array(  
+                     'id'                 =>     $id,
                      'name'               =>     $_POST['name'],  
-                );  
+                );
                 $array_data[] = $extra;  
                 $final_data = json_encode($array_data);  
                 if(file_put_contents('teams.json', $final_data))  
