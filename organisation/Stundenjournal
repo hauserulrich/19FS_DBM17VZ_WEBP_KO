@@ -1,4 +1,9 @@
 <<<<<<< HEAD
+#Wullschleger Dominique
+## 17.04.19 | 3h | Organisation bezüglich Teamaufteilung und anstehender Tasks 
+## 24.04.19 | 5h | Beginn mit KO Logik und überarbeitung der Task verteilung der Gruppe
+## 2.4.19 | 2h | HTML Gerüst (Tabelle)
+=======
 
 # Niederhauser Linus
 ## 17.04.19 | 3h | Organisation bezüglich Teamaufteilung und anstehender Tasks 
@@ -12,6 +17,24 @@
 ## 08.05.19 | 2h | Besprechung und Inputs mit Herr Hauser
 =======
 
+#GRUPPE INITIALDARSTELLUNG
+# Becker Reto 
+## 17.04.19 | 3h | Organisation bezüglich Teamaufteilung und anstehender Tasks 
+## 24.04.19 | 5h | Beginn mit KO Logik und überarbeitung der Task verteilung der Gruppe
+=======
+
+# Bolli Colin
+## 17.04.19 | 3h | Organisation bezüglich Teamaufteilung und anstehender Tasks 
+## 24.04.19 | 5h | Beginn mit KO Logik und überarbeitung der Task verteilung der Gruppen
+## 03.05.19 | 2h | Resultat Eingabemaske ergänzen und vervollständigen
+## 06.05.19 | 5h | Beginn mit zuteilungen Partien
+## 07.05.19 | 8h | Weiterarbeit zuteilungen Partien
+=======
+
+#Marquart Christoph
+## 17.04.19 | 3h | Organisation bezüglich Teamaufteilung und anstehender Tasks 
+## 24.04.19 | 5h | Beginn mit KO Logik und überarbeitung der Task verteilung der Gruppe
+=======
 
 # Rukunakumar Arthith, Linvers Sascha, Jurkorvic Patrik 
 ## 06.05.19 | 3h | PHP Anpassung dass die JSON Datei eine zugehörige ID Nummer erhält
@@ -21,8 +44,7 @@
 
 =======
 >>>>>>> parent of 670f575... Update Stundenjournal
-# Wullschleger Dominique
-## 2.4.19 | 2h | HTML Gerüst (Tabelle)
+)
 
 # Rukunakumar Arthith
 ## 3.4.19 | 1.5h | CSS verlinkung / Styling / Reihenfolge platz um 3. platz geändert
