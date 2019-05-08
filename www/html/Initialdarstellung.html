@@ -1,0 +1,53 @@
+<!DOCTYPE html>  
+ <html>  
+      <head>
+           <meta charset="UTF-8">
+           <title>KO-Phase</title>  
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+      </head>  
+      <body>  
+           <br />  
+           <div class="container" style="width:500px;">  
+                <h3 align="">KO-Phase</h3><br />                 
+                <form method="post"><br/>
+                    <label>Begegnungen</label><br><br>
+                    <div id="tabelle">
+                    <table class="table table-bordered table-striped" id="teams_table">
+                        <tr>
+                            <th>Team 1</th>
+                            <th>Ergebnis</th>
+                            <th>Team 2</th>
+                        </tr>
+                    </table>
+                    </div>
+                    <br>
+                     <input type="submit" name="nächste Runde" value="nächste Runde" class="btn btn-info" /><br />                      
+                </form>  
+           </div>  
+           <br />  
+      </body>  
+ </html>
+<script>
+var teamCount=0;
+$(document).ready(function(){
+    $.getJSON("teams.json", function(data){
+        var teams_data = '';
+        $.each(data, function(key, value){
+			if(0=teamCount%2)
+				{
+				teams_data += '<tr>';
+				teams_data += '<td>'+value.name+'</td>';
+				teams_data += '<td>'+'<input type="number" min="0" name="score" style="width:50px;float:left;" class="form-control" />'+ '<input type="number" min="0" name="score" style="width:50px;float:right;" class="form-control" />'+'</td>';
+				}
+			else{
+				teams_data += '<td>'+value.name+'</td>';
+				teams_data += '</tr>';
+			}
+			teamCount++;
+        });
+        $('#teams_table').append(teams_data);
+    });
+});
+</script>
