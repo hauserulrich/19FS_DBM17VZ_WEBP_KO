@@ -60,5 +60,16 @@ return: statement object
 * in case of success, the id of the removed team is returned
 * in case of failure the statement holds error information
 
-Example: `teamadd.php?name=name1`
+Example: `teamremove.php?id=3`
+
+### Add result
+
+URL: resultadd.php?id=xy&status=win/loose
+
+return: statement object
+
+* in case of success, the id of the removed team is returned
+* in case of failure the statement holds error information
+
+Example: `resultadd.php?id=4&status=win`
 
