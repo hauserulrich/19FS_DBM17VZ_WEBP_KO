@@ -6,6 +6,7 @@
            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+           <!--<script src="Initaldarstellung.js"> </script>-->.
       </head>  
       <body>  
            <br />  
@@ -29,25 +30,31 @@
            <br />  
       </body>  
  </html>
+
 <script>
 var teamCount=0;
-$(document).ready(function(){
-    $.getJSON("teams.json", function(data){
+$(document).ready(init);
+
+function init(){
+    $.getJSON("teams.json", "", fileOpened);
+  }
+
+  function fileOpened(data,status,request){
         var teams_data = '';
         $.each(data, function(key, value){
-			if(0=teamCount%2)
-				{
-				teams_data += '<tr>';
-				teams_data += '<td>'+value.name+'</td>';
-				teams_data += '<td>'+'<input type="number" min="0" name="score" style="width:50px;float:left;" class="form-control" />'+ '<input type="number" min="0" name="score" style="width:50px;float:right;" class="form-control" />'+'</td>';
-				}
-			else{
-				teams_data += '<td>'+value.name+'</td>';
-				teams_data += '</tr>';
-			}
-			teamCount++;
+if(0==teamCount%2)
+{
+teams_data += '<tr>';
+teams_data += '<td>'+value.name+'</td>';
+teams_data += '<td>'+'<input id="teamleft" team_id="'+value.id+'" type="number" min="0" name="score" style="width:50px;float:left;" class="form-control" />';
+}
+else{
+        teams_data += '<input  id="teamright" team_id="'+value.id+'" type="number" min="0" name="score" style="width:50px;float:right;" class="form-control" />'+'</td>'
+teams_data += '<td>'+value.name+'</td>';
+teams_data += '</tr>';
+}
+teamCount++;
         });
         $('#teams_table').append(teams_data);
-    });
-});
+    }
 </script>
