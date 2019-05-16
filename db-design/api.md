@@ -46,14 +46,14 @@ URL: teams.php
 
 return: statement object
 
-* in case of success, the teams are returned with id as an array of team objects
+* in case of success, the teams are returned with id and status as an array of team objects
 * in case of failure the statement holds error information
 
 Example: `teams`
 
 ### Remove team
 
-URL: teamremove.php?name=xxxx
+URL: teamremove.php?id=xy
 
 return: statement object
 
@@ -61,8 +61,6 @@ return: statement object
 * in case of failure the statement holds error information
 
 Example: `teamadd.php?name=name1`
-
-
 
 
 
