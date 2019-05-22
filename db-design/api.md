@@ -46,99 +46,30 @@ URL: teams.php
 
 return: statement object
 
-* in case of success, the teams are returned with id as an array of team objects
+* in case of success, the teams are returned with id and status as an array of team objects
 * in case of failure the statement holds error information
 
 Example: `teams`
 
 ### Remove team
 
-URL: teamremove.php?name=xxxx
+URL: teamremove.php?id=xy
 
 return: statement object
 
 * in case of success, the id of the removed team is returned
 * in case of failure the statement holds error information
 
-Example: `teamadd.php?name=name1`
+Example: `teamremove.php?id=3`
 
+### Add result
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-------------------------------------------------------------------
-
-
-
-
-## Groups
-
-### Request teams and groups
-
-URL: teamingroups.php
+URL: resultadd.php?id=xy&status=win/loose
 
 return: statement object
 
-* in case of success, the complete team records (team id, name and group id) are returned as an array
+* in case of success, the id of the removed team is returned
 * in case of failure the statement holds error information
 
-Example: `teamingroups.php`
-
-URL: gamesofteam.php?teamid=xyz
-
-return: statement object
-
-* in case of success, the games are returned as an array
-* in case of failure the statement holds error information
-
-Example: `gamesofteam.php?id=2`
-
-## Games plan
-
-## Teams
-
-URL: games.php
-
-return: statement object
-
-* in case of success, all games are returned as an array
-* in case of failure the statement holds error information
-
-Example: `games.php`
-
-### Manage results
-
-URL: teamingroups.php -> see *Request teams and groups*
-
-URL: resultadd.php?team1\_id=xy&team2\_id=xy&punkte\_team1=xy&punkte\_team2=xy
-
-return: statement object
-
-* in case of success, the id of the game is returned
-* in case of failure the statement holds error information
-
-Example: `resultadd.php?team1_id=1&team2_id=4&punkte_team1=2&punkte_team2=0`
-
-URL: games.php -> see *Teams*
-
-### Register game
-
-URL: resultadd.php?team1\_id=xy&team2\_id=xy
-
-return: statement object
-
-* in case of success, the id of the new game is returned
-* in case of failure the statement holds error information
-
-Example: `resultadd.php?team1_id=1&team2_id=4`
+Example: `resultadd.php?id=4&status=win`
 
