@@ -33,26 +33,63 @@
 var teamCount=0;
 function init(){
     $.ajax({url: "../db/teams.php"}).done(recievedteamnames).fail(ajaxFailed);
-	}		  
+}
+
 function recievedteamnames(data){
-	var teams_data = '';
-        $.each(JSON.parse(data, function(key, value)
+	teams=JSON.parse(data);
+        teams.forEach(addTeamName);
+}
+
+function addTeamName(team,teamCount)
+{
+	if(0==teamCount%2)
+		{
+			jQuery('<tr></tr>', 
 			{
-			if(0==teamCount%2)
-				{
-				teams_data += '<tr>';
-				teams_data += '<td>'+value.name+'</td>';
-				teams_data += '<td>'+'<input id="teamleft" team_id="'+value.id+'" type="number" min="0" name="score" style="width:50px;float:left;" class="form-control" />';
-				}
-			else{
-        		teams_data += '<input  id="teamright" team_id="'+value.id+'" type="number" min="0" name="score" style="width:50px;float:right;" class="form-control" />'+'</td>'
-				teams_data += '<td>'+value.name+'</td>';
-				teams_data += '</tr>';
-				}
-			teamCount++;
-        }));
-        $('#teams_table').append(teams_data);
-		};
+    			id: "tabrow"+teamCount
+    		})
+			.appendTo("#teams_table");
+			jQuery('<td></td>', 
+			{
+    			id: "tabteam"+teamCount
+    		})
+			.appendTo("#tabrow"+teamCount);
+			$("#tabteam"+teamCount)
+				.html(team.name);
+			jQuery('<input/>', 
+			{
+    			id: "teamleft",
+				team_id: "'"+team.id+"'",
+				type: "number",
+				min: "0",
+				name:"score",
+				style:"width:50px;float:left;",
+				class:"form-control"
+    		})
+			.appendTo("#tabrow"+teamCount);
+		}
+	else{
+			jQuery('<input/>', 
+			{
+    			id: "teamright",
+				team_id: "'"+team.id+"'",
+				type: "number",
+				min: "0",
+				name:"score",
+				style:"width:50px;float:right;",
+				class:"form-control"
+    		})
+			.appendTo("#tabrow"+(teamCount-1));
+			jQuery('<td></td>', 
+			{
+    			id: "tabteam"+teamCount
+    		})
+			.appendTo("#tabrow"+(teamCount-1));
+			$("#tabteam"+teamCount)
+				.html(team.name);
+		}
+}
+
 function ajaxFailed(){
 	alert("fail");
 }	
