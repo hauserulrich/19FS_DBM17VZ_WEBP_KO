@@ -33,11 +33,11 @@
 var teamCount=0;
 function init(){
     $.ajax({url: "../db/teams.php"}).done(recievedteamnames).fail(ajaxFailed);
-	}
-					  
+	}		  
 function recievedteamnames(data){
 	var teams_data = '';
-        $.each(data, function(key, value){
+        $.each(JSON.parse(data, function(key, value)
+			{
 			if(0==teamCount%2)
 				{
 				teams_data += '<tr>';
@@ -50,7 +50,7 @@ function recievedteamnames(data){
 				teams_data += '</tr>';
 				}
 			teamCount++;
-        });
+        }));
         $('#teams_table').append(teams_data);
 		};
 function ajaxFailed(){
