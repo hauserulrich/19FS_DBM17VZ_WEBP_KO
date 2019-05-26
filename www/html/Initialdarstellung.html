@@ -31,23 +31,104 @@
  </html>
 <script>
 var teamCount=0;
-$(document).ready(function(){
-    $.getJSON("teams.json", function(data){
-        var teams_data = '';
-        $.each(data, function(key, value){
-			if(0=teamCount%2)
-				{
-				teams_data += '<tr>';
-				teams_data += '<td>'+value.name+'</td>';
-				teams_data += '<td>'+'<input type="number" min="0" name="score" style="width:50px;float:left;" class="form-control" />'+ '<input type="number" min="0" name="score" style="width:50px;float:right;" class="form-control" />'+'</td>';
-				}
-			else{
-				teams_data += '<td>'+value.name+'</td>';
-				teams_data += '</tr>';
-			}
-			teamCount++;
-        });
-        $('#teams_table').append(teams_data);
-    });
-});
+function init(){
+    $.ajax({url: "../db/teams.php"}).done(recievedteamnames).fail(ajaxFailed);
+}
+
+function recievedteamnames(data){
+	teams=JSON.parse(data);
+        teams.forEach(addTeamName);
+}
+
+function addTeamName(team,teamCount)
+{
+	if(0==teamCount%2)
+		{
+			jQuery('<tr></tr>', 
+			{
+    			id: "tabrow"+teamCount
+    		})
+			.appendTo("#teams_table");
+			jQuery('<td></td>', 
+			{
+    			id: "tabteam"+teamCount
+    		})
+			.appendTo("#tabrow"+teamCount);
+			$("#tabteam"+teamCount)
+				.html(team.name);
+			jQuery('<input/>', 
+			{
+    			id: "teamleft",
+				team_id: "'"+team.id+"'",
+				type: "number",
+				min: "0",
+				name:"score",
+				style:"width:50px;float:left;",
+				class:"form-control"
+    		})
+			.appendTo("#tabrow"+teamCount);
+		}
+	else{
+			jQuery('<input/>', 
+			{
+    			id: "teamright",
+				team_id: "'"+team.id+"'",
+				type: "number",
+				min: "0",
+				name:"score",
+				style:"width:50px;float:right;",
+				class:"form-control"
+    		})
+			.appendTo("#tabrow"+(teamCount-1));
+			jQuery('<td></td>', 
+			{
+    			id: "tabteam"+teamCount
+    		})
+			.appendTo("#tabrow"+(teamCount-1));
+			$("#tabteam"+teamCount)
+				.html(team.name);
+		}
+}
+
+function ajaxFailed(){
+	alert("fail");
+}	
+window.onload=init;
+</script>
+
+     $('#begegnungen').on('submit', function (e) {
+          e.preventDefault();
+          //alert("hallo");
+          console.log("test: ", json_content);
+          var teamResults = [];
+          for (i = 0; i < gameCount; i++) {
+               var teamleft = [];
+               var teamright = [];
+               $(".game_" + i).each(function () {
+                    if ($(this).attr("id") == "teamleft") {
+                         teamleft["id"] = $(this).attr("team_id");
+                         teamleft["result"] = $(this).val();
+                    } else {
+                         teamright["id"] = $(this).attr("team_id");
+                         teamright["result"] = $(this).val();
+                    }
+               });
+               if (teamleft["result"] > teamright["result"]) {
+                    teamResults["team_" + teamleft["id"]] = "win";
+                    teamResults["team_" + teamright["id"]] = "lose";
+               } else if (teamleft["result"] < teamright["result"]) {
+                    teamResults["team_" + teamleft["id"]] = "lose";
+                    teamResults["team_" + teamright["id"]] = "win";
+               }
+
+          }
+          console.log("teamResults: ", teamResults);
+
+          $.each(json_content, function (key, value) {
+               value.status = teamResults["team_" + value.id];
+          });
+
+          console.log("json_content: ", json_content);
+          this.submit();
+     });
 </script>
