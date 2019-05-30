@@ -15,24 +15,26 @@
                     <label>Begegnungen</label><br><br>
                     <div id="tabelle">
                     <table class="table table-bordered table-striped" id="teams_table">
-                        <tr>
-                            <th>Team 1</th>
-                            <th>Ergebnis</th>
-                            <th>Team 2</th>
-                        </tr>
                     </table>
                     </div>
                     <br>
-                     <input type="submit" name="nächste Runde" value="nächste Runde" class="btn btn-info" /><br />                      
+                     <input id="teamsubmit" type="submit" name="nächste Runde" value="nächste Runde" class="btn btn-info" /><br />                      
                 </form>  
            </div>  
            <br />  
       </body>  
  </html>
 <script>
+var removereq=0;
 var teamCount=0;
 function init(){
-    $.ajax({url: "../db/teams.php"}).done(recievedteamnames).fail(ajaxFailed);
+	if(0<removereq)
+		{
+			window.setTimeout(init,100);
+			return;
+		}
+    $("#teams_table").html("<tr><th>Team 1</th><th>Ergebnis</th><th>Team 2</th></tr>");
+	$.ajax({url: "../db/teams.php"}).done(recievedteamnames).fail(failedteamnames);
 }
 
 function recievedteamnames(data){
@@ -64,7 +66,7 @@ function addTeamName(team,teamCount)
 				min: "0",
 				name:"score",
 				style:"width:50px;float:left;",
-				class:"form-control"
+				class:"form-control team"
     		})
 			.appendTo("#tabrow"+teamCount);
 		}
@@ -77,7 +79,7 @@ function addTeamName(team,teamCount)
 				min: "0",
 				name:"score",
 				style:"width:50px;float:right;",
-				class:"form-control"
+				class:"form-control team"
     		})
 			.appendTo("#tabrow"+(teamCount-1));
 			jQuery('<td></td>', 
@@ -90,45 +92,28 @@ function addTeamName(team,teamCount)
 		}
 }
 
-function ajaxFailed(){
+function failedteamnames(){
 	alert("fail");
 }	
 window.onload=init;
-</script>
 
-     $('#begegnungen').on('submit', function (e) {
+     $('#teamsubmit').on('click', function (e) {
           e.preventDefault();
           //alert("hallo");
-          console.log("test: ", json_content);
-          var teamResults = [];
-          for (i = 0; i < gameCount; i++) {
-               var teamleft = [];
-               var teamright = [];
-               $(".game_" + i).each(function () {
-                    if ($(this).attr("id") == "teamleft") {
-                         teamleft["id"] = $(this).attr("team_id");
-                         teamleft["result"] = $(this).val();
-                    } else {
-                         teamright["id"] = $(this).attr("team_id");
-                         teamright["result"] = $(this).val();
+		 		$("#teams_table").find("tr").each(function(e)
+				{
+                    if ($(this).find("#teamleft").val()>$(this).find("#teamright").val()) {
+				   	removereq++;	
+				   $.ajax({url: "../db/teamremove.php?id="+$(this).find("#teamright").attr("team_id")}).done(removereturned).fail(removereturned);
+                    } 
+					else if ($(this).find("#teamleft").val()<$(this).find("#teamright").val()) {
+				   	removereq++;	
+				   $.ajax({url: "../db/teamremove.php?id="+$(this).find("#teamleft").attr("team_id")}).done(removereturned).fail(removereturned);
                     }
                });
-               if (teamleft["result"] > teamright["result"]) {
-                    teamResults["team_" + teamleft["id"]] = "win";
-                    teamResults["team_" + teamright["id"]] = "lose";
-               } else if (teamleft["result"] < teamright["result"]) {
-                    teamResults["team_" + teamleft["id"]] = "lose";
-                    teamResults["team_" + teamright["id"]] = "win";
-               }
-
-          }
-          console.log("teamResults: ", teamResults);
-
-          $.each(json_content, function (key, value) {
-               value.status = teamResults["team_" + value.id];
-          });
-
-          console.log("json_content: ", json_content);
-          this.submit();
-     });
+     		init();     
+	 });
+	function removereturned(){
+		removereq--;
+	}
 </script>
