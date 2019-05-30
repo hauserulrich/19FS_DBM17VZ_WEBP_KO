@@ -62,6 +62,15 @@ return: statement object
 
 Example: `teamremove.php?id=3`
 
+URL: teamremove.php?all
+
+return: statement object
+
+* in case of success, all teams are removed
+* in case of failure the statement holds error information
+
+Example: `teamremove.php?all`
+
 ### Add result
 
 URL: resultadd.php?id=xy&status=win/loose
