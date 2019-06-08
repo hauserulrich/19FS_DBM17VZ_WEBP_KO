@@ -47,6 +47,7 @@ function init(){
           data:{name},
           dataType:"JSON",
           }).done(recievedteamnames).fail(failedteamnames);
+	$.ajax({url: "../db/teams.php"}).done(recievedteamnames).fail(failedteamnames);
 
 }
 function recievedteamnames(data){
