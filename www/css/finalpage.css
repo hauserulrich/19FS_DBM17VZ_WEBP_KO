@@ -54,6 +54,6 @@ body {
     padding: 20px;
     height: 626px;
     width: 626px;
-    background-image: url("pokal.png");
+    background-image: url("../pokal.png");
     background-repeat: no-repeat;
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <title>And the Winner is:</title>
+  
+  
+  
+      <link rel="stylesheet" href="../css/finalpage.css">
+
+  
+</head>
+
+<body>
+    <div class="outer-container">
+   <div class="inner-container">
+     <div class="centered-content">
+        <table class="table table-bordered table-striped" id="placeholder_winner">
+        </table>
+     </div>
+   </div>
+</div>
+  
+<div class="wrapper"></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+  
+
+    <script  src="../js/finalpage.js"></script>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+function init(){
+
+    $("#placeholder_team").html("<tr><th>And the Winner is:</th></tr>");
+	$.ajax({
+          url: "../db/teams.php",
+          method:"POST",
+          data:{name},
+          dataType:"JSON",
+          }).done(recievedteamnames).fail(failedteamnames);
+
+}
+function recievedteamnames(data){
+	teams=JSON.parse(data);
+        teams.forEach(addTeamName);
+                    
+function failedteamnames(){
+	alert("fail");
+}	
+
+window.onload=init;
+
+</script>
+    

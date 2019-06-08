@@ -25,7 +25,6 @@
       </body>  
  </html>
 <script>
-var teamsremaining=0;
 var removereq=0;
 var teamCount=0;
 function init(){
@@ -36,16 +35,13 @@ function init(){
 		}
     $("#teams_table").html("<tr><th>Team 1</th><th>Ergebnis</th><th>Team 2</th></tr>");
 	$.ajax({url: "../db/teams.php"}).done(recievedteamnames).fail(failedteamnames);
-    
-    if(teamsremaining==2)
-        {
-            window.location.href = "../final_page/index.html"
-        }
 }
+
 function recievedteamnames(data){
 	teams=JSON.parse(data);
         teams.forEach(addTeamName);
 }
+
 function addTeamName(team,teamCount)
 {
 	if(0==teamCount%2)
@@ -95,38 +91,27 @@ function addTeamName(team,teamCount)
 				.html(team.name);
 		}
 }
+
 function failedteamnames(){
 	alert("fail");
 }	
 window.onload=init;
+
      $('#teamsubmit').on('click', function (e) {
           e.preventDefault();
           //alert("hallo");
 		 		$("#teams_table").find("tr").each(function(e)
 				{
                     if ($(this).find("#teamleft").val()>$(this).find("#teamright").val()) {
-				   	removereq++;
-                    teamsremaining++;
+				   	removereq++;	
 				   $.ajax({url: "../db/teamremove.php?id="+$(this).find("#teamright").attr("team_id")}).done(removereturned).fail(removereturned);
                     } 
 					else if ($(this).find("#teamleft").val()<$(this).find("#teamright").val()) {
-				   	removereq++;
-                    teamsremaining++;
+				   	removereq++;	
 				   $.ajax({url: "../db/teamremove.php?id="+$(this).find("#teamleft").attr("team_id")}).done(removereturned).fail(removereturned);
                     }
-                    else {
-                    teamsremaining++;
-                    }
                });
-     		init();
-            if (teamsremaining>2)
-                {
-                    teamsremaining=0;
-                }
-            else 
-                {
-                    
-                }
+     		init();     
 	 });
 	function removereturned(){
 		removereq--;
