@@ -37,7 +37,7 @@ function init(){
     $("#teams_table").html("<tr><th>Team 1</th><th>Ergebnis</th><th>Team 2</th></tr>");
 	$.ajax({url: "../db/teams.php"}).done(recievedteamnames).fail(failedteamnames);
     
-    if(teamsremaining=1)
+    if(teamsremaining==1)
         {
             window.location.href = "../final_page.html"
         }
