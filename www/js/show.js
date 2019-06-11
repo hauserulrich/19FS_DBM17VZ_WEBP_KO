@@ -1,6 +1,6 @@
+//Initialisation
 function init(){
-// teams anzeigen
-
+// Show Available Teams
 $.ajax(
     {
         url: "../db/teamnames.php"
@@ -10,18 +10,18 @@ $.ajax(
 function receivedteamnames(data){
 	var teammembers = JSON.parse(data);
 	var content = "";
-	// Liste Erstellen
+	// Create Lists with Teams
 	if(teammembers.length != 0){
 	    for(var i in teammembers) {
 	        content += '<li class="list-group-item">' + teammembers[i] + "</li>";
 	    }
 	}
-	// No Teams
+	// No Teams Warning
 	else {
 	    content += '<div class="alert alert-warning" role="alert">No teams found. Just add some!</div>';
 	}
 
-	// Display Groups
+	// Place Content Inside "assignedgroups" Div
 	$("#assignedgroups").html(content);
 }
 
