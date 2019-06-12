@@ -1,16 +1,30 @@
 <<<<<<< HEAD
+
+#Nikolic Katarina
+## 17.04.19 | 3h   | Organisation bezüglich Teamaufteilung und anstehender Tasks 
+## 08.05.19 | 2h   | Besprechung und Inputs mit Herr Hauser
+## 19.05.19 | 8h   | Javascript für Verlierer bestimmen
+
+=======
+
 #Wullschleger Dominique
-## 17.04.19 | 3h | Organisation bezüglich Teamaufteilung und anstehender Tasks 
-## 2.4.19 | 2h | HTML Gerüst (Tabelle)
-## 08.05.19 | 2h | Besprechung und Inputs mit Herr Hauser
-## 08.05.19 | 4h | Recherche If/Else Funktion um Verlier zu bestimmen
-## 14.05.19 | 2h | Ablaufplan Verliererbestimmung
+## 17.04.19 | 3h   | Organisation bezüglich Teamaufteilung und anstehender Tasks 
+## 02.04.19 | 2h   | HTML Gerüst (Tabelle)
+## 08.05.19 | 2h   | Besprechung und Inputs mit Herr Hauser
+## 08.05.19 | 4h   | Recherche If/Else Funktion um Verlier zu bestimmen
+## 14.05.19 | 2h   | Ablaufplan Verliererbestimmung
+## 15.05.19 | 2.5h | Vorbereitung und Anpassung Code für Abfrage Verlierer/Gewinner
+## 29.05.19 | 5h  | Besprechung und Bearbeitung Code mit Herr Hauser
 =======
 
 #Raschle Florian
-## 17.04.19 | 3h | Organisation bezüglich Teamaufteilung und anstehender Tasks 
-## 12.05.19 | 4h | Recherche Arrays, Elimination
-## 14.05.19 | 2h | Ablaufplan Verliererbestimmung
+## 17.04.19 | 3h   | Organisation bezüglich Teamaufteilung und anstehender Tasks 
+## 12.05.19 | 4h   | Recherche Arrays, Elimination
+## 14.05.19 | 2h   | Ablaufplan Verliererbestimmung
+## 15.05.19 | 2.5h | Vorbereitung und Anpassung Code für Abfrage Verlierer/Gewinner
+## 22.05.19 | 2h   | Organisation Team und Dokumentationsaufbereitung
+## 29.05.19 | 5h   | Besprechung und Bearbeitung Code mit Herr Hauser
+## 08.06.19 | 6h   | Einbindung Final Page (Erfolg) + Versuch Einbindung des Sieger auf die Final Page (Erfolg jedoch ohne Formatierung)
 =======
 
 
@@ -19,6 +33,11 @@
 ## 24.04.19 | 5h | Beginn mit KO Logik und überarbeitung der Task verteilung der Gruppen
 ## 08.05.19 | 2h | Besprechung und Inputs mit Herr Hauser
 ## 13.05.19 | 4h | Elimination der Verlierer und übernahme der Gewinner in die teams.json Datei
+## 15.05.19 | 2,5h | Erstellung der Sieger-Seite und Besprechung mit Herr Hauser
+## 22.05.19 | 3,5h | Beginn Zusammenführung der einzelnen Code-Teile und generelle Fehlerbehebung
+## 29.05.19 | 5h | Besprechung und Bearbeitung Code mit Herr Hauser
+## 30.05.19 | 5h | Versuch Einbindung Final Page + Bearbeitung Code Final Page
+## 08.06.19 | 3h | Versuch Einbindung Final Page + Bearbeitung Code Final Page
 =======
 
 # Marxer Jan
@@ -26,6 +45,8 @@
 ## 24.04.19 | 5h | Beginn mit KO Logik und überarbeitung der Task verteilung der Gruppen
 ## 08.05.19 | 2h | Besprechung und Inputs mit Herr Hauser
 ## 13.05.19 | 4h | Elimination der Verlierer und übernahme der Gewinner in die teams.json Datei
+## 15.05.19 | 2,5h | Erstellung der Sieger-Seite und Besprechung mit Herr Hauser
+## 22.05.19 | 3,5h | Beginn Zusammenführung der einzelnen Code-Teile und generelle Fehlerbehebung 
 =======
 
 # Flach Maximilian
@@ -38,8 +59,11 @@
 #GRUPPE INITIALDARSTELLUNG
 # Becker Reto 
 ## 17.04.19 | 3h | Organisation bezüglich Teamaufteilung und anstehender Tasks
-## 24.04.19 | 8h |
+## 24.04.19 | 8h | Erstellung Initialdarstellung
 ## 08.05.19 | 2h | Besprechung und Inputs mit Herr Hauser
+## 22.05.19 | 3,5h | Beginn Zusammenführung der einzelnen Code-Teile und generelle Fehlerbehebung
+## 29.05.19 | 5h | Besprechung und Bearbeitung Code mit Herr Hauser
+## 11.06.19 | 4h | Navigationsliste, diverse Änderungen & Auskommentieren
 =======
 
 # Bolli Colin
@@ -48,14 +72,26 @@
 ## 06.05.19 | 5h | Beginn mit zuteilungen Partien
 ## 07.05.19 | 8h | Weiterarbeit zuteilungen Partien
 ## 08.05.19 | 2h | Besprechung und Inputs mit Herr Hauser
+## 22.05.19 | 3,5h | Beginn Zusammenführung der einzelnen Code-Teile und generelle Fehlerbehebung
 =======
 
 #Marquart Christoph
 ## 17.04.19 | 3h | Organisation bezüglich Teamaufteilung und anstehender Tasks
 ## 08.05.19 | 2h | Besprechung und Inputs mit Herr Hauser
+## 09.05.19 | 3h | Allgemeine Arbeit an der Initialdarstellung und beginn Recherche Übername der gespeicherten Teams in Tabelle
+## 22.05.19 | 3,5h | Beginn Zusammenführung der einzelnen Code-Teile und generelle Fehlerbehebung
+## 29.05.19 | 4h | Besprechung und Bearbeitung mit Herr Hauser
 =======
 
-# Rukunakumar Arthith, Linvers Sascha, Jurkorvic Patrik 
+# Rukunakumar Arthith, Linvers Sascha, Jurkovic Patrik
+## 11.06.19 | 1h   | Auskommentieren von Code JS & HTML
+## 08.06.19 | 2.5h | Final Page Anpassung – korrekte Ausgabe + formatierung
+## 29.05.19 | 0.5h | index.html Anpassung – auto reload
+## 29.05.19 | 5h   | Besprechung und Bearbeitung mit Herr Hauser
+## 28.05.19 | 2h   | Einbindung Bootstrap / Menu eingefügt
+## 27.05.19 | 9h   | index.html anstatt Php datei
+## 22.05.19 | 3h   | registrieren.html Datei erstellen/ Teamspeicherung in teamnahes.php
+## 15.05.19 | 2h   | Besprechung mit Herr Hauser wegen Ajax
 ## 08.05.19 | 2h   | Besprechung mit Herr Hauser
 ## 06.05.19 | 3h   | PHP Anpassung dass die JSON Datei eine zugehörige ID Nummer erhält
 ## 21.04.19 | 10h  | Eingabemaske für Teams
