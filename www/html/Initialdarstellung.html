@@ -71,9 +71,13 @@ function recievedteamnames(data){
 	teams=JSON.parse(data);
         teams.forEach(addTeamName);
 }
+
+//Team Tabelle Aufbauen
 function addTeamName(team,teamCount)
 {
+	// Wenn das Team gerade ist
 	if(0==teamCount%2)
+		// wird das html für die Tabelle in der Linken Spalte generiert
 		{
 			jQuery('<tr></tr>', 
 			{
@@ -99,7 +103,9 @@ function addTeamName(team,teamCount)
     		})
 			.appendTo("#tabrow"+teamCount);
 		}
+	// Wenn das Team ungerade ist
 	else{
+			// wird das html für die Tabell in der Rechten Spalte generiert
 			jQuery('<input/>', 
 			{
     			id: "teamright",
@@ -124,37 +130,40 @@ function addTeamName(team,teamCount)
 function failedteamnames(){
 	alert("fail");
 }
-//remove Teams
+
 window.onload=init;
-     $('#teamsubmit').on('click', function (e) {
-          e.preventDefault();
-		 		$("#teams_table").find("tr").each(function(e)
-				{
-                    if ($(this).find("#teamleft").val()>$(this).find("#teamright").val()) {
-				   	removereq++;
-                    teamsremaining++;
-				   $.ajax({url: "../db/teamremove.php?id="+$(this).find("#teamright").attr("team_id")}).done(removereturned).fail(removereturned);
-                    } 
-					else if ($(this).find("#teamleft").val()<$(this).find("#teamright").val()) {
-				   	removereq++;
-                    teamsremaining++;
-				   $.ajax({url: "../db/teamremove.php?id="+$(this).find("#teamleft").attr("team_id")}).done(removereturned).fail(removereturned);
-                    }
-                    else {
-                    teamsremaining++;
-                    }
-               });
-     		init();
-            if (teamsremaining>2)
-                {
-                    teamsremaining=0;
-                }
-            else 
-                {
-                    
-                }
-	 });
-	function removereturned(){
+	// Verlierer Teams entfernen
+	$('#teamsubmit').on('click', function (e) {
+		e.preventDefault();
+		// finde alle zeilen in der teams tabelle und loope über diese
+		$("#teams_table").find("tr").each(function (e) {
+			// wenn das linke team höhere punkte als das rechte team hat
+			if ($(this).find("#teamleft").val() > $(this).find("#teamright").val()) {
+				removereq++;
+				teamsremaining++;
+				// wird das rechte team via ajax request entfernt
+				$.ajax({
+					url: "../db/teamremove.php?id=" + $(this).find("#teamright").attr("team_id")
+				}).done(removereturned).fail(removereturned);
+				// wenn das rechte team höhere punkte als das linke hat
+			} else if ($(this).find("#teamleft").val() < $(this).find("#teamright").val()) {
+				removereq++;
+				teamsremaining++;
+				// wird das linke entfernet
+				$.ajax({
+					url: "../db/teamremove.php?id=" + $(this).find("#teamleft").attr("team_id")
+				}).done(removereturned).fail(removereturned);
+			} else {
+				teamsremaining++;
+			}
+		});
+		init();
+		if (teamsremaining > 2) {
+			teamsremaining = 0;
+		}
+	});
+
+	function removereturned() {
 		removereq--;
 	}
 </script>
