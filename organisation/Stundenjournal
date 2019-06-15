@@ -92,19 +92,22 @@
 =======
 
 # Rukunakumar Arthith, Linvers Sascha, Jurkovic Patrik
-## 11.06.19 | 1h   | Auskommentieren von Code JS & HTML
-## 08.06.19 | 2.5h | Final Page Anpassung – korrekte Ausgabe + formatierung
-## 29.05.19 | 0.5h | index.html Anpassung – auto reload
-## 29.05.19 | 5h   | Besprechung und Bearbeitung mit Herr Hauser
-## 28.05.19 | 2h   | Einbindung Bootstrap / Menu eingefügt
-## 27.05.19 | 9h   | index.html anstatt Php datei
-## 22.05.19 | 3h   | registrieren.html Datei erstellen/ Teamspeicherung in teamnahes.php
-## 15.05.19 | 2h   | Besprechung mit Herr Hauser wegen Ajax
-## 08.05.19 | 2h   | Besprechung mit Herr Hauser
-## 06.05.19 | 3h   | PHP Anpassung dass die JSON Datei eine zugehörige ID Nummer erhält
-## 21.04.19 | 10h  | Eingabemaske für Teams
-## 21.04.19 | 2h   | Besprechung und Inputs mit Herr Hauser
 ## 03.04.19 | 1.5h | CSS verlinkung / Styling / Reihenfolge platz um 3. platz geändert
+## 21.04.19 | 2h   | Besprechung und Inputs mit Herr Hauser
+## 21.04.19 | 10h  | Eingabemaske für Teams (basierend auf PHP)
+## 06.05.19 | 3h   | PHP Anpassung dass die JSON Datei eine zugehörige ID Nummer erhält
+## 08.05.19 | 2h   | Besprechung mit Herr Hauser
+## 15.05.19 | 2h   | Besprechung mit Herr Hauser wegen Ajax (PHP Webseite wird nicht mehr forgesetzt)
+## 22.05.19 | 3h   | registrieren.html Datei erstellen/ Teamspeicherung in teamnahes.php
+## 27.05.19 | 9h   | index.html anstatt Php datei (basierend auf HTML und JS)
+## 28.05.19 | 2h   | Einbindung Bootstrap / Menu eingefügt
+## 29.05.19 | 5h   | Besprechung und Bearbeitung mit Herr Hauser
+## 29.05.19 | 0.5h | index.html Anpassung – auto reload
+## 08.06.19 | 2.5h | Final Page Anpassung – korrekte Ausgabe + formatierung (Winner Page)
+## 11.06.19 | 1h   | Auskommentieren von Code JS & HTML
+## 14.06.19 | 2h   | Dokumentation Code (Eingabe Maske)
+
+
 
 
 =======
