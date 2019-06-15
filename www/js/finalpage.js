@@ -1,5 +1,5 @@
 /* Erstellung von Konfetti im Hintergrund. Code wurde nicht selber geschrieben. 
-Code wurde con hier runtergeladen: https://codepen.io/anon/pen/JMOQzE */
+Code wurde von hier runtergeladen: https://codepen.io/anon/pen/JMOQzE */
 for (var i = 0; i < 250; i++) {
   create(i);
 }
