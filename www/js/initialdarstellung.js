@@ -14,7 +14,7 @@ function init() {
     }).done(recievedteamnames).fail(failedteamnames);
 
     if (teamsremaining == 2) {
-        window.location.href = "../final_page/index.html"
+        window.location.href = "../html/final_page.html"
     }
 }
 //Teampaarungen
